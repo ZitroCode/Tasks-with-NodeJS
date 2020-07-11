@@ -1,0 +1,18 @@
+Comando de consola para NODEJS:
+
+# npm init --yes
+    Inicia el package.json | Controla dependencias para mi aplicación.
+
+# npm install express | Framework funciones ya necesarias para ahorrar tiempo e optimizada.
+
+# npm install mongoose | Interactia con la base de datos.
+
+# npm install ejs | Motor de plantillas.
+
+# npm install morgan | Ayuda al desarrollo.
+
+# npm install nodemon -D | Ayuda a no estar recargando el servidor de la pagina.
+(-D) | Dependencias solo para el desarrollo.
+----------------------------------------------------------------------------------------------------
+Sintaxis alterna de modulos:
+# npm install express mongoose ejs morgan  | Instala todos los modulos anteriores en un linea de comando.

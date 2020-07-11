@@ -1,0 +1,52 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+    <div class="row">
+        <!-- FORM -->
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-2">Information</h2>
+                    <form action="/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="title" placeholder="Insert a title" class="form-control mb-2">
+                            <textarea type="text" name="description" placeholder="Insert a description" class="form-control" cols="80" rows="10"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add New Task</button>
+                        <button type="reset" class="btn btn-danger">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- LIST -->
+        <div class="col-md-7">
+            <h2 class="text-center mb-2">List form tasks</h2>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center">N°</th>
+                        <th class="text-center">Title</th>
+                        <th class="text-center">Description</th>
+                        <th class="text-center">Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let task = 0; task < tasks.length; task++) { %>
+                        <tr>
+                            <td><%= task + 1 %></td>
+                            <td><%= tasks[task].title %></td>
+                            <td><%= tasks[task].description %></td>
+                            <td>
+                                <a href="/update/<%= tasks[task]._id %>" class="btn <%= tasks[task].status ? 'btn-success' : 'btn-warning' %>">Done</a>
+                                <a href="/edit/<%= tasks[task]._id %>" class="btn btn-info">Edit</a>                                
+                                <a href="/delete/<%= tasks[task]._id %>" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>

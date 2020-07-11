@@ -1,0 +1,23 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-2">Information</h2>
+                    <form action="/edit/<%= task._id %>" method="POST">
+                        <div class="form-group">
+                        <input type="text" name="title" placeholder="Insert a title" value="<%= task.title %>" class="form-control mb-2">
+                        <textarea type="text" name="description" placeholder="Insert a description" class="form-control" cols="60" rows="10"><%= task.description %></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Task</button>
+                    <a href="/" class="btn btn-danger">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>
